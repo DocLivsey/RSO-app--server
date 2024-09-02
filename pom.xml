@@ -12,7 +12,7 @@
     <artifactId>rso_app_server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>RsoAppServer</name>
-    <description>RsoAppServer</description>
+    <description>This is the rso application server</description>
     <url/>
     <licenses>
         <license/>
@@ -28,6 +28,15 @@
     </scm>
     <properties>
         <java.version>22</java.version>
+
+        <application.database.url>jdbc:postgresql://localhost:5432/rso_app_database</application.database.url>
+        <application.database.username>postgres</application.database.username>
+        <application.database.password>190122</application.database.password>
+        <application.database.hibernate.ddl>update</application.database.hibernate.ddl>
+
+        <application.name>RsoAppServer</application.name>
+        <application.version>0.0.1-SNAPSHOT</application.version>
+        <application.description>This is the rso application server</application.description>
     </properties>
     <dependencies>
         <dependency>
