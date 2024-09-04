@@ -12,36 +12,16 @@
             <column name="email" type="varchar(32)">
                 <constraints nullable="false" />
             </column>
-            <column name="firstname" type="varchar(64)">
-                <constraints nullable="false" />
-            </column>
-            <column name="surname" type="varchar(64)">
-                <constraints nullable="false" />
-            </column>
-            <column name="patronymic" type="varchar(64)">
-                <constraints nullable="false" />
-            </column>
-            <column name="birthday" type="date">
-                <constraints nullable="false" />
-            </column>
-            <column name="faculty" type="varchar(128)">
-                <constraints nullable="false" />
-            </column>
-            <column name="speciality" type="varchar(128)">
-                <constraints nullable="false" />
-            </column>
-            <column name="course" type="int">
-                <constraints nullable="false" />
-            </column>
-            <column name="group" type="varchar(8)">
-                <constraints nullable="false" />
-            </column>
-            <column name="role" type="varchar(32)">
-                <constraints nullable="false" />
-            </column>
-            <column name="is_superuser" type="boolean">
-                <constraints nullable="false" />
-            </column>
+            <column name="firstname" type="varchar(64)"/>
+            <column name="surname" type="varchar(64)"/>
+            <column name="patronymic" type="varchar(64)"/>
+            <column name="birthday" type="date"/>
+            <column name="faculty" type="varchar(128)"/>
+            <column name="speciality" type="varchar(128)"/>
+            <column name="course" type="int"/>
+            <column name="group" type="varchar(8)"/>
+            <column name="role" type="varchar(32)"/>
+            <column name="is_superuser" type="boolean"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
