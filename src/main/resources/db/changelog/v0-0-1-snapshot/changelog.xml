@@ -16,5 +16,7 @@
 
     <include file="add-constraints-in-users-table.xml" relativeToChangelogFile="true" />
 
+    <include relativeToChangelogFile="true" file="users-table-alter-primary-key.xml" />
+
     <include file="create-binding-users-events-table.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
