@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add-constraints-in-users-table" author="doclivsey">
+        <addNotNullConstraint
+                tableName="users"
+                columnName="firstname" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="surname" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="patronymic" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="birthday" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="faculty" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="speciality" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="course" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="group" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="role" />
+        <addNotNullConstraint
+                tableName="users"
+                columnName="is_superuser"
+                defaultNullValue="false" />
+    </changeSet>
+</databaseChangeLog>
