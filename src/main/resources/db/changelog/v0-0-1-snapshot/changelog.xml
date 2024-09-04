@@ -15,4 +15,6 @@
     <include file="create-events-table.xml" relativeToChangelogFile="true" />
 
     <include file="add-constraints-in-users-table.xml" relativeToChangelogFile="true" />
+
+    <include file="create-binding-users-events-table.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
