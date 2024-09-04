@@ -19,4 +19,6 @@
     <include relativeToChangelogFile="true" file="users-table-alter-primary-key.xml" />
 
     <include file="create-binding-users-events-table.xml" relativeToChangelogFile="true" />
+
+    <include relativeToChangelogFile="true" file="users-alter-table-add-password-field.xml" />
 </databaseChangeLog>
