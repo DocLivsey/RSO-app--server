@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-events-table" author="doclivsey">
+        <createTable tableName="events">
+            <column name="event_id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="tag_name" type="varchar(128)">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(256)">
+                <constraints nullable="false" />
+            </column>
+            <column name="scheduled_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="begin_at" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="ends_at" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
