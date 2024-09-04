@@ -8,8 +8,9 @@
         <tagDatabase tag="v0-0-1"/>
     </changeSet>
 
-    <include file="create-user-table.xml" relativeToChangelogFile="true"/>
+    <include file="create-user-table.xml" relativeToChangelogFile="true" />
 
     <include file="alter-person-table-to-users.xml" relativeToChangelogFile="true" />
 
+    <include file="create-events-table.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
