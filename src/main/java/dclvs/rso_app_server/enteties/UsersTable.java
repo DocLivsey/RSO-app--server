@@ -16,7 +16,8 @@ public class UsersTable {
 
     @Id
     @GeneratedValue
-    private Long user_id;
+    @Column(name = "user_id")
+    private Long userId;
 
     private String email;
 

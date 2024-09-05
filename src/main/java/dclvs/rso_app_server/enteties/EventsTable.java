@@ -14,7 +14,8 @@ public class EventsTable {
 
     @Id
     @GeneratedValue
-    private Long event_id;
+    @Column(name = "event_id")
+    private Long eventId;
 
     @Column(name = "tag_name")
     private String tagName;
