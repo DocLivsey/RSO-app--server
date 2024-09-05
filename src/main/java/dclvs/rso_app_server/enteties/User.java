@@ -12,15 +12,21 @@ import java.util.Calendar;
 *   to allow CRUD manipulation with variable entities
 */
 enum Faculty {
-
+    FCSnAM,
 }
 
 enum Speciality {
-
+    AMnCS, // Applied Math an Information
+    MS, // Math Support
+    AI, // Applied Informatics
 }
 
 enum Group {
-
+    ThreeAM, FourAM,
+    ThreeMM, FourMM,
+    ThreeIT, FourIT,
+    ELEVENTH, TWELFTH, THIRTEENTH,
+    TWENTY_FIRST, TWENTY_SECOND, TWENTY_THIRTEENTH,
 }
 
 @Data
