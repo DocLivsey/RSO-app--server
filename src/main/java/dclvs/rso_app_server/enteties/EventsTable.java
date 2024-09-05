@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.Calendar;
 
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "events")
