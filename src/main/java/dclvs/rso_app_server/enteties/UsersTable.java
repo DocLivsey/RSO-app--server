@@ -12,7 +12,7 @@ import java.util.Calendar;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
-public class User {
+public class UsersTable {
 
     @Id
     @GeneratedValue

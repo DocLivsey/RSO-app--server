@@ -1,4 +1,4 @@
 package dclvs.rso_app_server.enteties;
 
-public class Event {
+public class EventsTable {
 }
