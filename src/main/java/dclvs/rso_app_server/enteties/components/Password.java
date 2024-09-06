@@ -37,7 +37,7 @@ public class Password {
     }
 
     public Password(String password) {
-
+        setPassword(password);
     }
 
     public boolean isPasswordCorrect(String password) {
