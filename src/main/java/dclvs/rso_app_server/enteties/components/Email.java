@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 @Accessors(chain = true)
 public class Email {
 
-    private final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile(
+    private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile(
             "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$",
             Pattern.CASE_INSENSITIVE
     );
@@ -34,7 +34,7 @@ public class Email {
         setEmail(email);
     }
 
-    public boolean isEmailCorrect(String email) {
+    public static boolean isEmailCorrect(String email) {
         return VALID_EMAIL_ADDRESS_REGEX
                 .matcher(email)
                 .matches();

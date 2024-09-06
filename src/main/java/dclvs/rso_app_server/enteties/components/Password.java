@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 @Accessors(chain = true)
 public class Password {
 
-    private final Pattern VALID_PASSWORD_FORM = Pattern.compile(
+    private static final Pattern VALID_PASSWORD_FORM = Pattern.compile(
             "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*[@#$%^&+=]).{8,}$",
             Pattern.CASE_INSENSITIVE
     );
@@ -40,7 +40,7 @@ public class Password {
         setPassword(password);
     }
 
-    public boolean isPasswordCorrect(String password) {
+    public static boolean isPasswordCorrect(String password) {
         return VALID_PASSWORD_FORM
                 .matcher(password)
                 .matches();
