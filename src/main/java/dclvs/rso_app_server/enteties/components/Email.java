@@ -1,8 +1,6 @@
 package dclvs.rso_app_server.enteties.components;
 
 import dclvs.rso_app_server.Constants;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -36,14 +34,14 @@ public class Email {
         setEmail(email);
     }
 
-    public boolean isCorrectEmail(String email) {
+    public boolean isEmailCorrect(String email) {
         return VALID_EMAIL_ADDRESS_REGEX
                 .matcher(email)
                 .matches();
     }
 
     public void validateEmail(String email) throws RuntimeException {
-        if (!isCorrectEmail(email)) {
+        if (!isEmailCorrect(email)) {
             throw new RuntimeException( // TODO: code my own email throwable exception
                     Constants.ANSI_RED_BACKGROUND +
                     "email form is not correct! Validation did not pass" +
