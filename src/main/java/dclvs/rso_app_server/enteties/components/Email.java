@@ -26,7 +26,7 @@ public class Email {
             validateEmail(email);
             this.email = email;
         } catch (RuntimeException exception) {
-            log.error(exception.getMessage());
+            log.error(exception.getMessage(), exception);
         }
     }
 
