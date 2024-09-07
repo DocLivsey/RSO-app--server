@@ -30,7 +30,7 @@ public class Password {
         secureRandom.nextBytes(salt);
 
         // Hashing password
-        MessageDigest messageDigest = MessageDigest.getInstance("SHA-12");
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
         messageDigest.update(salt);
         return messageDigest.digest(password.getBytes());
     }
