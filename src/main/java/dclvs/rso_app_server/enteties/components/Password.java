@@ -13,7 +13,6 @@ import java.util.regex.Pattern;
 
 @Data
 @Slf4j
-@NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
 public class Password {

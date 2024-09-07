@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 
 @Slf4j
 @Getter
-@NoArgsConstructor
 @Accessors(chain = true)
 public class Email {
 
