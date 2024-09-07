@@ -38,15 +38,15 @@ public class Password {
     }
 
     public boolean matches(Password password) throws NoSuchAlgorithmException {
-        return Arrays.equals(mocPasswordHashing(), password.mocPasswordHashing());
+        return hashCode() == password.hashCode();
     }
 
     public boolean matches(String password) throws NoSuchAlgorithmException {
         return matches(new Password(password));
     }
 
-    public boolean matches(byte[] password) throws NoSuchAlgorithmException {
-        return Arrays.equals(mocPasswordHashing(), password);
+    public boolean matches(int password) throws NoSuchAlgorithmException {
+        return hashCode() == password;
     }
 
 }
