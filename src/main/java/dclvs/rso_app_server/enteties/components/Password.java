@@ -37,15 +37,15 @@ public class Password {
         return messageDigest.digest(password.getBytes());
     }
 
-    public boolean matches(Password password) throws NoSuchAlgorithmException {
+    public boolean matches(Password password) {
         return hashCode() == password.hashCode();
     }
 
-    public boolean matches(String password) throws NoSuchAlgorithmException {
+    public boolean matches(String password) {
         return matches(new Password(password));
     }
 
-    public boolean matches(int password) throws NoSuchAlgorithmException {
+    public boolean matches(int password) {
         return hashCode() == password;
     }
 
