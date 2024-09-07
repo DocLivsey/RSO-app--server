@@ -1,25 +1,22 @@
 package dclvs.rso_app_server.enteties.components;
 
 import dclvs.rso_app_server.Constants;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
+@Data
 @Slf4j
-@Getter
-@EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
 public class Password {
-
-    private static final Pattern VALID_PASSWORD_FORM = Pattern.compile(
-            "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*[@#$%^&+=]).{8,}$",
-            Pattern.CASE_INSENSITIVE
-    );
 
     /* In server service-part of application password might save and manipulated in sha hash-code
      * Password will be transformed into hash-code in API service-part of application
@@ -27,43 +24,28 @@ public class Password {
      */
     private String password;
 
-    public void setPassword(String password) {
-        try {
-            validatePassword(password);
-            this.password = password;
-        } catch (RuntimeException exception) {
-            log.error(exception.getMessage(), exception);
-        }
+    public byte[] mocPasswordHashing() throws NoSuchAlgorithmException {
+        // Generating salt (key)
+        SecureRandom secureRandom = new SecureRandom();
+        byte[] salt = new byte[16];
+        secureRandom.nextBytes(salt);
+
+        // Hashing password
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-12");
+        messageDigest.update(salt);
+        return messageDigest.digest(password.getBytes());
     }
 
-    public Password(String password) {
-        setPassword(password);
+    public boolean matches(Password password) throws NoSuchAlgorithmException {
+        return Arrays.equals(mocPasswordHashing(), password.mocPasswordHashing());
     }
 
-    public static boolean isPasswordCorrect(String password) {
-        return VALID_PASSWORD_FORM
-                .matcher(password)
-                .matches();
+    public boolean matches(String password) throws NoSuchAlgorithmException {
+        return matches(new Password(password));
     }
 
-    public void validatePassword(String password) throws RuntimeException {
-        if (!isPasswordCorrect(password)) {
-            throw new RuntimeException( // TODO: code my own password throwable exception
-                    Constants.ANSI_RED_BACKGROUND +
-                            "password form is not correct! Validation did not pass" +
-                            Constants.RESET
-            );
-        } else {
-            log.info(
-                    Constants.ANSI_GREEN_BACKGROUND +
-                            "password is correct! Validation passed successfully" +
-                            Constants.RESET
-            );
-        }
-    }
-
-    public boolean matches(Password password) {
-        return false;
+    public boolean matches(byte[] password) throws NoSuchAlgorithmException {
+        return Arrays.equals(mocPasswordHashing(), password);
     }
 
 }
