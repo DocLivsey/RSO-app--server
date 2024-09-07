@@ -24,7 +24,7 @@ public class EmailValidationUnitTest {
         Assertions.assertFalse(Email.isEmailCorrect(email2));
         Assertions.assertTrue(Email.isEmailCorrect(email3));
         Assertions.assertFalse(Email.isEmailCorrect(email4));
-        Assertions.assertFalse(Email.isEmailCorrect(email5));
+        Assertions.assertTrue(Email.isEmailCorrect(email5));
         Assertions.assertTrue(Email.isEmailCorrect(email6));
     }
 

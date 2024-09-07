@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class Email {
 
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile(
-            "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$",
+            "^[A-Za-z0-9+_.-]+@(.+)$",
             Pattern.CASE_INSENSITIVE
     );
 
