@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 @Data
 @Slf4j
+@EqualsAndHashCode
 @AllArgsConstructor
 @Accessors(chain = true)
 public class Password {
@@ -23,6 +24,7 @@ public class Password {
      */
     private String password;
 
+    // TODO: this method of hashing has been found not to comply with the determinism requirement
     public byte[] mocPasswordHashing() throws NoSuchAlgorithmException {
         // Generating salt (key)
         SecureRandom secureRandom = new SecureRandom();
