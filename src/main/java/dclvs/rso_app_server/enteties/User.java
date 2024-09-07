@@ -35,7 +35,7 @@ enum Group {
 @Accessors(chain = true)
 public class User {
 
-    private Long user_id;
+    private Long userId;
 
     private Email email;
 
