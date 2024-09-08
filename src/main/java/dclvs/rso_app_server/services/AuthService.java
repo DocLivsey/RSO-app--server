@@ -6,6 +6,7 @@ import dclvs.rso_app_server.enteties.UsersTable;
 import dclvs.rso_app_server.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.rmi.NoSuchObjectException;
@@ -18,12 +19,23 @@ public class AuthService {
 
     private UserRepository userRepository;
 
-    public void authenticate(User user) throws Throwable {
-        UsersTable usersTable = userRepository
+    public ResponseEntity<?> authenticate(User user) {
+        try {
+            UsersTable usersTable = identification(user);
+            return ResponseEntity.ok(usersTable);
+        } catch (Throwable throwable) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(throwable.getMessage());
+        }
+    }
+
+    public UsersTable identification(User user) throws Throwable {
+        return userRepository
                 .findByUserId(user.getUserId())
                 .orElseThrow((Supplier<Throwable>) () -> new NoSuchObjectException(
-                                STR."\{Constants.ERROR}No such user: \{user} in system\{Constants.RESET}"
-                        ));
+                        STR."\{Constants.ERROR}No such user: \{user} in system\{Constants.RESET}"
+                ));
     }
 
 }
