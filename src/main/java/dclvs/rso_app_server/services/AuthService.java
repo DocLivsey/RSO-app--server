@@ -19,6 +19,8 @@ public class AuthService {
 
     private UserRepository userRepository;
 
+    private final UserService userService;
+
     public ResponseEntity<?> authenticate(User user) {
         try {
             UsersTable usersTable = identification(user);
