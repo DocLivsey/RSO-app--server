@@ -29,6 +29,8 @@
     <properties>
         <java.version>22</java.version>
 
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+
         <application.database.url>jdbc:postgresql://localhost:5432/rso_app_database</application.database.url>
         <application.database.username>postgres</application.database.username>
         <application.database.password>190122</application.database.password>
@@ -108,6 +110,12 @@
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
         </dependency>
     </dependencies>
 
