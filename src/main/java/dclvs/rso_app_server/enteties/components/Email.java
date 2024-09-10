@@ -25,6 +25,7 @@ public class Email {
             validateEmail(email);
             this.email = email;
         } catch (RuntimeException exception) {
+            this.email = "undefined";
             log.error(exception.getMessage(), exception);
         }
     }
