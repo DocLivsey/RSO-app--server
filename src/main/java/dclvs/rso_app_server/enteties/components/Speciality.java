@@ -27,6 +27,6 @@ public enum Speciality {
                         returnableSpeciality.set(speciality);
                     }
                 });
-        return returnableSpeciality.get();
+        return returnableSpeciality.get() != null ? returnableSpeciality.get() : UNDEFINED;
     }
 }

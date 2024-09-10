@@ -29,6 +29,6 @@ public enum Group {
                         returnableGroup.set(group);
                     }
                 });
-        return returnableGroup.get();
+        return returnableGroup.get() != null ? returnableGroup.get() : UNDEFINED;
     }
 }

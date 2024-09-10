@@ -27,6 +27,6 @@ public enum Faculty {
                         returnableFaculty.set(faculty);
                     }
                 });
-        return returnableFaculty.get();
+        return returnableFaculty.get() != null ? returnableFaculty.get() : UNDEFINED;
     }
 }
