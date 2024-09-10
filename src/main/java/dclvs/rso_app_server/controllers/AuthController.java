@@ -18,8 +18,8 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/user/signup")
-    public void signup() {
-
+    public ResponseEntity<?> signup(@RequestBody User user) {
+        return authService.signUpNewUser(user);
     }
 
     /* TODO: replace User -> UserDto and in AuthService make mapping UserDto into User

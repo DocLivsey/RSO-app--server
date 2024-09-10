@@ -40,4 +40,16 @@ public class AuthService {
                 ));
     }
 
+    public ResponseEntity<?> signUpNewUser(User user) {
+        UsersTable usersTable = userService.convertToUsersTable(user);
+        try {
+            userRepository.saveAndFlush(usersTable);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(e.getMessage());
+        }
+    }
+
 }
