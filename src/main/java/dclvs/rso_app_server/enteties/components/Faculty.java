@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicReference;
  *   to allow CRUD manipulation with variable entities
  */
 @Getter
-enum Faculty {
+public enum Faculty {
     FCSnAM("ФКТиПМ");
 
     private final String titleRUS;

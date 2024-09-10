@@ -6,7 +6,7 @@ import java.util.EnumSet;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Getter
-enum Speciality {
+public enum Speciality {
     AMnCS("ПМИ"), // Applied Math an Information
     MS("МО"), // Math Support
     AI("ПИ"); // Applied Informatics
