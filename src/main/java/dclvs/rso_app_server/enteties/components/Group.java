@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 @Getter
 public enum Group {
+    UNDEFINED("undefined"),
     ThreeAM("3ПМ"), FourAM("4ПМ"),
     ThreeMM("3ММ"), FourMM("4ММ"),
     ThreeIT("3ИТ"), FourIT("4ИТ"),

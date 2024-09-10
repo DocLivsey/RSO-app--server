@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 @Getter
 public enum Speciality {
+    UNDEFINED("undefined"),
     AMnCS("ПМИ"), // Applied Math an Information
     MS("МО"), // Math Support
     AI("ПИ"); // Applied Informatics

@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 @Getter
 public enum Faculty {
+    UNDEFINED("undefined"),
     FCSnAM("ФКТиПМ");
 
     private final String titleRUS;
