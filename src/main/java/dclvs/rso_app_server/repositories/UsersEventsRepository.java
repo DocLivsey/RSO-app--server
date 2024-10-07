@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface UsersEventsRepository extends JpaRepository<UsersEventsTable, Long> {
 
     @Query("select u from UsersEventsTable u where u.eventsTable = :eventsTable")
-    Optional<List<UsersTable>> findUsersByEvents(@Param("eventsTable") EventsTable eventsTable);
+    Optional<List<UsersTable>> findUsersByEvent(@Param("eventsTable") EventsTable eventsTable);
 
 }
