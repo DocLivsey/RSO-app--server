@@ -29,9 +29,9 @@
     <properties>
         <java.version>22</java.version>
 
-        <application.database.url>jdbc:postgresql://localhost:5432/rso_app_database</application.database.url>
+        <application.database.url>jdbc:postgresql://109.120.132.215:5432/rso_app_database</application.database.url>
         <application.database.username>postgres</application.database.username>
-        <application.database.password>190122</application.database.password>
+        <application.database.password>a123456b</application.database.password>
         <application.database.hibernate.ddl>update</application.database.hibernate.ddl>
 
         <application.name>RsoAppServer</application.name>
