@@ -21,4 +21,6 @@
     <include file="create-binding-users-events-table.xml" relativeToChangelogFile="true" />
 
     <include relativeToChangelogFile="true" file="users-alter-table-add-password-field.xml" />
+
+    <include relativeToChangelogFile="true" file="users-alter-column-group.xml" />
 </databaseChangeLog>
