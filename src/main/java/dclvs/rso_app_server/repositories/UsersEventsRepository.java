@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public interface UsersEventsRepository extends JpaRepository<UsersEventsTable, Long> {
 
-    @Query("select u from UsersEventsTable u where u.eventsTable == :eventsTable")
+    @Query("select u from UsersEventsTable u where u.eventsTable = :eventsTable")
     Optional<List<UsersTable>> getUsersByEvents(@Param("eventsTable") EventsTable eventsTable);
 
 }
