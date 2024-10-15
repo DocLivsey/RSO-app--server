@@ -30,6 +30,7 @@
         <java.version>22</java.version>
 
         <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <lombok.version>1.18.30</lombok.version>
 
         <application.database.url>jdbc:postgresql://109.120.132.215:5432/rso_app_database</application.database.url>
         <application.database.username>econrg_admin</application.database.username>
