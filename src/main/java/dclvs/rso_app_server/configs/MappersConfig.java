@@ -2,6 +2,7 @@ package dclvs.rso_app_server.configs;
 
 import dclvs.rso_app_server.mappers.EventMapper;
 import dclvs.rso_app_server.mappers.UserMapper;
+import dclvs.rso_app_server.mappers.UserMapperImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
