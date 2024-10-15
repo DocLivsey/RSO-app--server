@@ -1,5 +1,7 @@
 package dclvs.rso_app_server.services;
 
+import dclvs.rso_app_server.enteties.Event;
+import dclvs.rso_app_server.enteties.EventsTable;
 import dclvs.rso_app_server.mappers.EventMapper;
 import dclvs.rso_app_server.repositories.EventRepository;
 import lombok.AllArgsConstructor;
@@ -16,5 +18,13 @@ public class EventService {
     private final EventMapper eventMapper;
 
     private final EventRepository eventRepository;
+
+    public Event convertToEntity(EventsTable eventsTable) {
+        return eventMapper.toEntity(eventsTable);
+    }
+
+    public EventsTable convertToDataSource(Event event) {
+        return eventMapper.toDataSource(event);
+    }
 
 }
