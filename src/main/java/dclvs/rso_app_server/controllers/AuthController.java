@@ -11,25 +11,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RestController
 @AllArgsConstructor
+@RestController("/user")
 public class AuthController {
 
     private final AuthService authService;
 
-    @PostMapping("/user/signup")
+    @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody User user) {
         return authService.signUpNewUser(user);
     }
 
     /* TODO: replace User -> UserDto and in AuthService make mapping UserDto into User
         and do query to database by UserRepository with User not UserDto */
-    @GetMapping("/user/login")
+    @GetMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
         return authService.authenticate(user);
     }
 
-    @GetMapping("/user/logout")
+    @GetMapping("/logout")
     public void logout() {
 
     }
