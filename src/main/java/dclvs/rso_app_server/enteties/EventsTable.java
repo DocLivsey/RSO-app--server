@@ -35,6 +35,4 @@ public class EventsTable {
     @Column(name = "ends_at")
     private Calendar endsAt;
 
-
-
 }
