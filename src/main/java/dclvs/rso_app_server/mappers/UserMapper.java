@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.Named;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UserMapper {
 
     @Mappings({
@@ -21,13 +21,38 @@ public interface UserMapper {
     User toEntity(UsersTable usersTable);
 
     @Mappings({
-            @Mapping(target = "email", source = "email", expression = "java(user.getEmail().getEmail())"),
-            @Mapping(target = "password", source = "password", expression = "java(user.getPassword().getPassword())"),
-            @Mapping(target = "faculty", source = "faculty", expression = "java(user.getFaculty().name())"),
-            @Mapping(target = "speciality", source = "speciality", expression = "java(user.getSpeciality().name())"),
-            @Mapping(target = "group", source = "group", expression = "java(user.getGroup().name())"),
+            @Mapping(target = "email", source = "email", qualifiedByName = "mapEmail"),
+            @Mapping(target = "password", source = "password", qualifiedByName = "mapPassword"),
+            @Mapping(target = "faculty", source = "faculty", qualifiedByName = "mapFaculty"),
+            @Mapping(target = "speciality", source = "speciality", qualifiedByName = "mapSpeciality"),
+            @Mapping(target = "group", source = "group", qualifiedByName = "mapGroup"),
     })
     UsersTable toDataSource(User user);
+
+    @Named("mapEmail")
+    default String map(Email email) {
+        return  email != null ? email.getEmail() : null;
+    }
+
+    @Named("mapPassword")
+    default String map(Password password) {
+        return password != null ? password.getPassword() : null;
+    }
+
+    @Named("mapFaculty")
+    default String map(Faculty faculty) {
+        return faculty != null ? faculty.getTitleRUS() : null;
+    }
+
+    @Named("mapSpeciality")
+    default String map(Speciality speciality) {
+        return speciality != null ? speciality.getTitleRUS() : null;
+    }
+
+    @Named("mapGroup")
+    default String map(Group group) {
+        return group != null ? group.getTitleRUS() : null;
+    }
 
     @Named("stringToEmail")
     default Email stringToEmail(String email) {
