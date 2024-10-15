@@ -7,7 +7,6 @@ import dclvs.rso_app_server.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -21,7 +20,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     public UsersTable convertToUsersTable(User user) {
-        return userMapper.toUsersTable(user);
+        return userMapper.toDataSource(user);
     }
 
     public User convertToUser(UsersTable usersTable) {

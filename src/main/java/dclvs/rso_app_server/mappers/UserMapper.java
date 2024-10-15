@@ -27,7 +27,7 @@ public interface UserMapper {
             @Mapping(target = "speciality", source = "speciality", expression = "java(user.getSpeciality().name())"),
             @Mapping(target = "group", source = "group", expression = "java(user.getGroup().name())"),
     })
-    UsersTable toUsersTable(User user);
+    UsersTable toDataSource(User user);
 
     @Named("stringToEmail")
     default Email stringToEmail(String email) {
