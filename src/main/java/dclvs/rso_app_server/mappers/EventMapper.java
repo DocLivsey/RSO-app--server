@@ -2,9 +2,11 @@ package dclvs.rso_app_server.mappers;
 
 import dclvs.rso_app_server.enteties.Event;
 import dclvs.rso_app_server.enteties.EventsTable;
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+@Mapper(componentModel = "spring")
 public interface EventMapper {
 
     @Mappings({
