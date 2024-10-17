@@ -48,4 +48,14 @@ public class EventController {
         }
     }
 
+    @DeleteMapping("remove")
+    public ResponseEntity<?> removeEvent(@RequestParam Long eventId) {
+        try {
+            eventService.removeEvent(eventId);
+            return ResponseEntity.ok().build();
+        } catch (Exception exception) {
+            return ResponseEntity.internalServerError().body(exception);
+        }
+    }
+
 }
