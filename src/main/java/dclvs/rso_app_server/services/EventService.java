@@ -9,6 +9,12 @@ import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Slf4j
 @Service
 @AllArgsConstructor
@@ -25,6 +31,16 @@ public class EventService {
 
     public EventsTable convertToDataSource(Event event) {
         return eventMapper.toDataSource(event);
+    }
+
+    public Optional<List<Event>> findAllEventsByDate(Calendar date) {
+        return Optional.of(eventRepository
+                .findAllEventsByDate(date)
+                .stream()
+                .flatMap(Collection::stream)
+                .map(eventMapper::toEntity)
+                .collect(Collectors.toList())
+        );
     }
 
 }
