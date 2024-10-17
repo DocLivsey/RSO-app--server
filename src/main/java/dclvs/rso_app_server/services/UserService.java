@@ -19,11 +19,11 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public UsersTable convertToUsersTable(User user) {
+    private UsersTable convertToUsersTable(User user) {
         return userMapper.toDataSource(user);
     }
 
-    public User convertToUser(UsersTable usersTable) {
+    private User convertToUser(UsersTable usersTable) {
         return userMapper.toEntity(usersTable);
     }
 

@@ -25,11 +25,11 @@ public class EventService {
 
     private final EventRepository eventRepository;
 
-    public Event convertToEntity(EventsTable eventsTable) {
+    private Event convertToEntity(EventsTable eventsTable) {
         return eventMapper.toEntity(eventsTable);
     }
 
-    public EventsTable convertToDataSource(Event event) {
+    private EventsTable convertToDataSource(Event event) {
         return eventMapper.toDataSource(event);
     }
 
