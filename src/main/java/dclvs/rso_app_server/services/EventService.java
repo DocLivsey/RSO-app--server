@@ -46,4 +46,8 @@ public class EventService {
         );
     }
 
+    public void createNewEvent(Event event) {
+        eventRepository.saveAndFlush(eventMapper.toDataSource(event));
+    }
+
 }

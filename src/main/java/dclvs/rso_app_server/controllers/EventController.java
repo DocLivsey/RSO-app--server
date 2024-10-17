@@ -6,9 +6,7 @@ import dclvs.rso_app_server.services.EventService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.rmi.NoSuchObjectException;
 import java.util.Calendar;
@@ -36,6 +34,16 @@ public class EventController {
         } catch (NoSuchObjectException exception) {
             return ResponseEntity.badRequest().body(exception);
         } catch (Throwable exception) {
+            return ResponseEntity.internalServerError().body(exception);
+        }
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<?> addEvent(@RequestBody Event event) {
+        try {
+            eventService.createNewEvent(event);
+            return ResponseEntity.ok().build();
+        } catch (Exception exception) {
             return ResponseEntity.internalServerError().body(exception);
         }
     }
