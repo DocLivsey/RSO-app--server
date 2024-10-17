@@ -35,7 +35,7 @@ public class UserController {
         } catch (NoSuchObjectException exception) {
             return ResponseEntity.notFound().build();
         } catch (Throwable throwable) {
-            return ResponseEntity.internalServerError().build();
+            return ResponseEntity.internalServerError().body(throwable);
         }
     }
 
