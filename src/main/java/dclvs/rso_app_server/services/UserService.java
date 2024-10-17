@@ -4,6 +4,7 @@ import dclvs.rso_app_server.enteties.User;
 import dclvs.rso_app_server.enteties.UsersTable;
 import dclvs.rso_app_server.mappers.UserMapper;
 import dclvs.rso_app_server.repositories.UserRepository;
+import dclvs.rso_app_server.repositories.UsersEventsRepository;
 import lombok.AllArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,8 @@ public class UserService {
     private final UserMapper userMapper;
 
     private final UserRepository userRepository;
+
+    private final UsersEventsRepository usersEventsRepository;
 
     public UsersTable convertToUsersTable(User user) {
         return userMapper.toDataSource(user);

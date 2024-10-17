@@ -4,6 +4,7 @@ import dclvs.rso_app_server.enteties.Event;
 import dclvs.rso_app_server.enteties.EventsTable;
 import dclvs.rso_app_server.mappers.EventMapper;
 import dclvs.rso_app_server.repositories.EventRepository;
+import dclvs.rso_app_server.repositories.UsersEventsRepository;
 import lombok.AllArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,8 @@ public class EventService {
     private final EventMapper eventMapper;
 
     private final EventRepository eventRepository;
+
+    private final UsersEventsRepository usersEventsRepository;
 
     public Event convertToEntity(EventsTable eventsTable) {
         return eventMapper.toEntity(eventsTable);
