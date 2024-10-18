@@ -1,6 +1,5 @@
-package dclvs.rso_app_server.enteties.components;
+package dclvs.rso_app_server.entities.components;
 
-import dclvs.rso_app_server.Constants;
 import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
@@ -8,8 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.Arrays;
-import java.util.regex.Pattern;
 
 @Data
 @Slf4j

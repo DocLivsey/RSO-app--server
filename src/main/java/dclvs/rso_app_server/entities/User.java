@@ -1,6 +1,6 @@
-package dclvs.rso_app_server.enteties;
+package dclvs.rso_app_server.entities;
 
-import dclvs.rso_app_server.enteties.components.*;
+import dclvs.rso_app_server.entities.components.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

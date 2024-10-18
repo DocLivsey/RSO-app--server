@@ -1,11 +1,8 @@
 package dclvs.rso_app_server.unit;
 
-import dclvs.rso_app_server.enteties.components.Email;
+import dclvs.rso_app_server.entities.components.Email;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class EmailValidationUnitTest {
 

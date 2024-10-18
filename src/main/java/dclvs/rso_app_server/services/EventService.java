@@ -1,7 +1,7 @@
 package dclvs.rso_app_server.services;
 
-import dclvs.rso_app_server.enteties.Event;
-import dclvs.rso_app_server.enteties.EventsTable;
+import dclvs.rso_app_server.entities.Event;
+import dclvs.rso_app_server.entities.EventsTable;
 import dclvs.rso_app_server.mappers.EventMapper;
 import dclvs.rso_app_server.repositories.EventRepository;
 import dclvs.rso_app_server.repositories.UsersEventsRepository;

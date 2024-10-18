@@ -1,6 +1,6 @@
 package dclvs.rso_app_server.unit;
 
-import dclvs.rso_app_server.enteties.components.Password;
+import dclvs.rso_app_server.entities.components.Password;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

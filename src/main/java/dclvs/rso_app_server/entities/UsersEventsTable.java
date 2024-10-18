@@ -1,4 +1,4 @@
-package dclvs.rso_app_server.enteties;
+package dclvs.rso_app_server.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

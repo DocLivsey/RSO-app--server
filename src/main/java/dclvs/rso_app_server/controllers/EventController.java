@@ -1,7 +1,7 @@
 package dclvs.rso_app_server.controllers;
 
 import dclvs.rso_app_server.Constants;
-import dclvs.rso_app_server.enteties.Event;
+import dclvs.rso_app_server.entities.Event;
 import dclvs.rso_app_server.services.EventService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

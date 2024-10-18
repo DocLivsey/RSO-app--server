@@ -1,9 +1,7 @@
 package dclvs.rso_app_server.unit;
 
 import dclvs.rso_app_server.Constants;
-import dclvs.rso_app_server.enteties.components.Password;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

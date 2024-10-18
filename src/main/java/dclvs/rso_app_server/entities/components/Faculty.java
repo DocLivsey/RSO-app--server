@@ -1,4 +1,4 @@
-package dclvs.rso_app_server.enteties.components;
+package dclvs.rso_app_server.entities.components;
 import lombok.Getter;
 
 import java.util.EnumSet;

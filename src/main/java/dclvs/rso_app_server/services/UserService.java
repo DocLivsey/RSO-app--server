@@ -1,10 +1,9 @@
 package dclvs.rso_app_server.services;
 
 import dclvs.rso_app_server.Constants;
-import dclvs.rso_app_server.enteties.Event;
-import dclvs.rso_app_server.enteties.EventsTable;
-import dclvs.rso_app_server.enteties.User;
-import dclvs.rso_app_server.enteties.UsersTable;
+import dclvs.rso_app_server.entities.EventsTable;
+import dclvs.rso_app_server.entities.User;
+import dclvs.rso_app_server.entities.UsersTable;
 import dclvs.rso_app_server.mappers.UserMapper;
 import dclvs.rso_app_server.repositories.EventRepository;
 import dclvs.rso_app_server.repositories.UserRepository;

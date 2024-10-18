@@ -1,6 +1,6 @@
 package dclvs.rso_app_server.controllers;
 
-import dclvs.rso_app_server.enteties.User;
+import dclvs.rso_app_server.entities.User;
 import dclvs.rso_app_server.services.AuthService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
