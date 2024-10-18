@@ -1,7 +1,7 @@
 package dclvs.rso_app_server.mappers;
 
 import dclvs.rso_app_server.entities.User;
-import dclvs.rso_app_server.entities.UsersTable;
+import dclvs.rso_app_server.datasources.UsersTable;
 import dclvs.rso_app_server.entities.components.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

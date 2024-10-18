@@ -1,7 +1,7 @@
 package dclvs.rso_app_server.mappers;
 
 import dclvs.rso_app_server.entities.Event;
-import dclvs.rso_app_server.entities.EventsTable;
+import dclvs.rso_app_server.datasources.EventsTable;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

@@ -2,7 +2,7 @@ package dclvs.rso_app_server.services;
 
 import dclvs.rso_app_server.Constants;
 import dclvs.rso_app_server.entities.User;
-import dclvs.rso_app_server.entities.UsersTable;
+import dclvs.rso_app_server.datasources.UsersTable;
 import dclvs.rso_app_server.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
