@@ -14,8 +14,9 @@ import java.util.List;
 import java.util.function.Supplier;
 
 @Slf4j
+@RestController
 @AllArgsConstructor
-@RestController("/event")
+@RequestMapping("/event")
 public class EventController {
 
     private final EventService eventService;
