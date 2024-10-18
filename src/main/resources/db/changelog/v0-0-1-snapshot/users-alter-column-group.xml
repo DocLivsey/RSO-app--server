@@ -5,6 +5,6 @@
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <changeSet id="9" author="doclivsey">
-        <renameColumn tableName="users" oldColumnName="group" newColumnName="education_group" />
+        <renameColumn tableName="users" oldColumnName="\'group\'" newColumnName="education_group" />
     </changeSet>
 </databaseChangeLog>
