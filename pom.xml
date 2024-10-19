@@ -29,8 +29,9 @@
     <properties>
         <java.version>22</java.version>
 
-        <mapstruct.version>1.5.5.Final</mapstruct.version>
         <lombok.version>1.18.30</lombok.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <feign.client.version>4.1.1</feign.client.version>
 
         <application.database.url>jdbc:postgresql://localhost:5432/rso_app_database</application.database.url>
         <application.database.username>postgres</application.database.username>
@@ -117,6 +118,11 @@
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${feign.client.version}</version>
         </dependency>
     </dependencies>
 
