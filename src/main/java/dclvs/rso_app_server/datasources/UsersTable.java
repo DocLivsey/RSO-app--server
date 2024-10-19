@@ -41,6 +41,7 @@ public class UsersTable {
 
     private Integer course;
 
+    @Column(name = "education_group")
     private String group;
 
 }
