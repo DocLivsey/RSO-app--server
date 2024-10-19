@@ -42,15 +42,14 @@ public class Email {
     public void validateEmail(String email) throws RuntimeException {
         if (!isEmailCorrect(email)) {
             throw new RuntimeException( // TODO: code my own email throwable exception
-                    Constants.ANSI_RED_BACKGROUND +
+                    STR."\{Constants.ANSI_RED_BACKGROUND}" +
                     "email form is not correct! Validation did not pass" +
-                    Constants.RESET
+                    STR."\{Constants.RESET}"
             );
         } else {
-            log.info(
-                    Constants.ANSI_GREEN_BACKGROUND +
-                    "email is correct! Validation passed successfully" +
-                    Constants.RESET
+            log.info("{}email is correct! Validation passed successfully{}",
+                    STR."\{Constants.ANSI_GREEN_BACKGROUND}",
+                    STR."\{Constants.RESET}"
             );
         }
     }
