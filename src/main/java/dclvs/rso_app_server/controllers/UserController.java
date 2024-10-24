@@ -24,7 +24,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/all")
-    public ResponseEntity<?> allUsersOnEvent(@RequestParam("eventId") Long eventId) {
+    public ResponseEntity<?> allUsersOnEvent(@RequestParam Long eventId) {
         try {
             List<User> users = userService
                     .allUsersOnEvent(eventId)
