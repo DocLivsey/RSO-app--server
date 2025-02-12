@@ -38,3 +38,6 @@ services:
     depends_on:
       - postgres
     environment: *app-variables
+
+volumes:
+  postgres_data:
