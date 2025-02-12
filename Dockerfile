@@ -1,4 +1,4 @@
-FROM gradle:jdk22 AS build
+FROM gradle:jdk22 AS builder
 
 WORKDIR /app
 
