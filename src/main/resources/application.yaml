@@ -3,9 +3,9 @@ spring:
     name: @application.name@
 
   datasource:
-    url: @application.database.url@
-    username: @application.database.username@
-    password: @application.database.password@
+    url: ${SPRING_DATASOURCE_URL:@application.database.url@}
+    username: ${SPRING_DATASOURCE_USERNAME:@application.database.username@}
+    password: ${SPRING_DATASOURCE_PASSWORD:@application.database.password@}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -16,9 +16,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   liquibase:
-    url: @application.database.url@
-    user: @application.database.username@
-    password: @application.database.password@
+    url: ${SPRING_DATASOURCE_URL:@application.database.url@}
+    user: ${SPRING_DATASOURCE_USERNAME:@application.database.username@}
+    password: ${SPRING_DATASOURCE_PASSWORD:@application.database.password@}
     change-log: classpath:/db/changelog/db.changelog-master.xml
     drop-first: false
 
