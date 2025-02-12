@@ -1,9 +1,40 @@
+x-spring-app-variables: &app-variables
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/rso_app_database
+  SPRING_DATASOURCE_USERNAME: admin
+  SPRING_DATASOURCE_PASSWORD: adminpassword
+x-postgres-db-variables: &db-variables
+  POSTGRES_USER: admin
+  POSTGRES_PASSWORD: adminpassword
+  POSTGRES_DB: rso_app_database
+x-postgres-admin-variables: &pgadmin-variables
+  PGADMIN_DEFAULT_EMAIL: admin@rso.com
+  PGADMIN_DEFAULT_PASSWORD: adminpassword
 services:
   postgres:
-    image: 'postgres:latest'
-    environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+    image: postgres:latest
+    container_name: postgres
+    environment: *db-variables
     ports:
-      - '5432'
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment: *pgadmin-variables
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rso-app-server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment: *app-variables
