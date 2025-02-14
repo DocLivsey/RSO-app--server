@@ -34,9 +34,9 @@
         <feign.client.version>4.1.1</feign.client.version>
 
         <application.database.url>jdbc:postgresql://localhost:5432/rso_app_database</application.database.url>
-        <application.database.username>postgres</application.database.username>
+        <application.database.username>admin</application.database.username>
         <application.database.hibernate.ddl>update</application.database.hibernate.ddl>
-        <application.database.password>190122</application.database.password>
+        <application.database.password>adminpassword</application.database.password>
 
         <application.name>RsoAppServer</application.name>
         <application.version>0.0.1-SNAPSHOT</application.version>
